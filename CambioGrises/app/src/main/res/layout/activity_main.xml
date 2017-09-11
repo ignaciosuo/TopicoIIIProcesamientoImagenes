@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.tux.cambiogrises.MainActivity">
+
+
+
+        <ScrollView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            tools:layout_editor_absoluteY="8dp"
+            tools:layout_editor_absoluteX="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:text="Procesamiento puntual"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/title"
+                    android:background="#004617"
+                    android:layout_width="match_parent"
+                    android:paddingTop="15px"
+                    android:paddingBottom="15px"
+                    android:textColor="@android:color/white"
+                    android:textAlignment="center"
+                    android:textSize="20dp" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/btnSelectImage"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:paddingRight="25px"
+                    android:textSize="16sp"
+                    android:text="Escoger imagen"/>
+
+                <TextView
+                    android:text="Imagen original"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/t1"
+                    android:textSize="16sp"
+                    android:textColor="#1311bd"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp" />
+
+                <HorizontalScrollView
+                    android:id="@+id/hsMainss"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center">
+
+
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:paddingBottom="0dp"
+                        android:paddingTop="5dp">
+
+                        <ImageView
+                            android:id="@+id/ivOriginal"
+                            android:layout_width="300dp"
+                            android:layout_height="600px"
+                            android:layout_marginBottom="10dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="0dp"
+                            android:layout_marginTop="10dp"
+                            android:minWidth="200dp" />
+
+                        <ImageView
+                            android:id="@+id/ivGray"
+                            android:layout_width="300dp"
+                            android:layout_height="600px"
+                            android:layout_marginBottom="10dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginTop="10dp"
+                            android:minWidth="200dp" />
+                    </LinearLayout>
+                </HorizontalScrollView>
+
+
+
+                <TextView
+                    android:id="@+id/t0"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Selecciona una opcion:"
+                    android:textColor="#1311bd"
+                    android:textSize="16sp"
+                    />
+
+                <HorizontalScrollView
+                    android:id="@+id/hsMains"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center">
+
+
+                    <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp">
+                        <RadioButton android:id="@+id/rGris"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Gris"
+                            android:onClick="onRadioButtonClicked"
+                            android:checked="true"/>
+                        <RadioButton android:id="@+id/rNegativo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Negativo"
+                            android:onClick="onRadioButtonClicked"/>
+                        <RadioButton android:id="@+id/rUmbralSimple"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Umbral"
+                            android:onClick="onRadioButtonClicked"/>
+                        <RadioButton android:id="@+id/rUmbralCompuesto"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Umbral compuesto"
+                            android:onClick="onRadioButtonClicked"/>
+                        <RadioButton android:id="@+id/rAclarar"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Aclarar/Oscurecer"
+                            android:onClick="onRadioButtonClicked"/>
+                    </RadioGroup>
+
+
+
+                </HorizontalScrollView>
+
+                <TextView
+                    android:id="@+id/tsd"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Umbral 1:"
+                    android:textColor="#1311bd"
+                    android:textSize="16sp"
+                    />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:paddingBottom="0dp"
+                    android:paddingTop="5dp">
+
+                    <SeekBar
+                        android:id="@+id/sbUmbral1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        />
+                    <TextView
+                        android:id="@+id/tvUmbral1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".2"
+                        android:layout_marginLeft="2dp"
+
+                        android:text="0"
+                        android:textColor="#1311bd"
+                        android:textSize="16sp"
+                        />
+                    <TextView
+                        android:id="@+id/tvUmbral1Color"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".2"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginRight="5dp"
+                        android:textColor="#1311bd"
+                        android:textSize="16sp"
+                        />
+
+                </LinearLayout>
+                <TextView
+                    android:id="@+id/tsds"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="5dp"
+                    android:text="Umbral 2:"
+                    android:textColor="#1311bd"
+                    android:textSize="16sp"
+                    />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:paddingBottom="0dp"
+                    android:paddingTop="5dp">
+
+                    <SeekBar
+                        android:id="@+id/sbUmbral2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        />
+                    <TextView
+                        android:id="@+id/tvUmbral2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".2"
+                        android:layout_marginLeft="2dp"
+
+                        android:text="0"
+                        android:textColor="#1311bd"
+                        android:textSize="16sp"
+                        />
+                    <TextView
+                        android:id="@+id/tvUmbral2Color"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".2"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginRight="5dp"
+                        android:textColor="#1311bd"
+                        android:textSize="16sp"
+                        />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:focusableInTouchMode="true">
+
+
+                    <android.support.design.widget.TextInputLayout
+                        android:id="@+id/edt2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <EditText
+                            android:id="@+id/etPotencia"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Potencia"
+                            android:inputType="numberDecimal"
+                            android:text="2.0"/>
+
+                    </android.support.design.widget.TextInputLayout>
+
+                </LinearLayout>
+
+
+
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/btnTrasnformImage"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:paddingRight="25px"
+                    android:textSize="16sp"
+                    android:text="Transformar Imagen"/>
+
+                <ProgressBar
+                    android:layout_width="fill_parent"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:id="@+id/barProgreso"
+                    android:max="100"
+                    android:indeterminate="false"
+                    android:progress="0"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_height="20dp"></ProgressBar>
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/txtPorcentaje"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:textAlignment="center"
+                    android:textColor="#6f0000"
+                    android:text="0%" />
+                <TextView
+                    android:text="Imagen transformada:"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/t2"
+                    android:textSize="16sp"
+                    android:textColor="#1311bd"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp" />
+
+                
+
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/txtHistograma"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:textAlignment="center"
+                    android:textColor="#6f0000"
+                    android:text="Histograma" />
+
+
+                <com.github.mikephil.charting.charts.BarChart
+                    android:id="@+id/chart1"
+                    android:layout_width="match_parent"
+                    android:layout_height="400dp"
+                     />
+
+
+
+
+            </LinearLayout>
+        </ScrollView>
+
+
+
+
+</android.support.constraint.ConstraintLayout>
+
